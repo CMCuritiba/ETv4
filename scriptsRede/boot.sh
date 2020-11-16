@@ -20,6 +20,6 @@ if [[ "$IPATUAL" != "" ]]; then
     NOVOHOSTNAME=$(host "$IPATUAL" | cut -d ' ' -f 5 | cut -d '.' -f 1)
     hostname "$NOVOHOSTNAME"
     if [[ ! -z "$NOVOHOSTNAME" ]]; then
-        echo "$NOVOHOSTNAME" > /etc/hostname
+        echo "$NOVOHOSTNAME" >/etc/hostname
     fi
 fi
