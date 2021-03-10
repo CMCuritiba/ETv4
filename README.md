@@ -15,6 +15,7 @@ Procedimento:
 2. É recomendado realizar a atualização do sistema operacional antes de configurar a ETv4;
 3. Faça login com o usuário criado;
 4. Baixe os _scripts_ do [repositório](https://github.com/CMCuritiba/ETv4/).
-5. Execute os _scripts_ com permissão de `root` (será necessário _input_ em alguns momentos):
+5. Crie um arquivo .env, dentro da pasta ETv4, conforme as suas necessidades (Use o arquivo .env.example como base para criar o seu .env)
+6. Execute os _scripts_ com permissão de `root` (será necessário _input_ em alguns momentos):
    - `sudo ./principal.sh`
-6. Reinicie e faça login com seu usuário do domínio.
+7. Reinicie e faça login com seu usuário do domínio.

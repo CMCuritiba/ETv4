@@ -2,16 +2,17 @@
 
 # Cria usuário suporte se não existe
 if ! id -u suporte &>/dev/null; then
-	useradd -m suporte
+	useradd -p $(openssl passwd -crypt $SUP_PASS) suporte
 	# Requer input
-	echo "Digite a senha do usuário suporte:"
-	passwd suporte
+	#echo "Digite a senha do usuário suporte:"
+	#passwd suporte
 fi
 
 # Atualiza a senha de root
 # Requer input
-echo "Digite a senha de root:"
-sudo passwd
+usermod -p $(openssl passwd -crypt $ROOT_PASS) root
+#echo "Digite a senha de root:"
+#sudo passwd
 
 # Seta grupo principal de suporte para users e deleta grupo suporte se existe
 # Também tira suporte de grupos de admin
