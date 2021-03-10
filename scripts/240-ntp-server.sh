@@ -3,8 +3,8 @@
 #Configura servidor NTP para ser o da Câmara
 
 echo '# Servidor da camara
-server  ntp1.cmc.pr.gov.br
-server  ntp2.cmc.pr.gov.br
+server  '"$SERVER1"'
+server  '"$SERVER2"'
 
 # Loops locais
 server  127.127.1.0
