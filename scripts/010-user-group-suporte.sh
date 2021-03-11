@@ -2,7 +2,7 @@
 
 # Cria usuário suporte se não existe
 if ! id -u suporte &>/dev/null; then
-	useradd -p $(openssl passwd -crypt $SUP_PASS) suporte
+	useradd -p "$(openssl passwd -crypt "$SUP_PASS")" suporte
 	# Requer input
 	#echo "Digite a senha do usuário suporte:"
 	#passwd suporte
@@ -10,7 +10,7 @@ fi
 
 # Atualiza a senha de root
 # Requer input
-usermod -p $(openssl passwd -crypt $ROOT_PASS) root
+usermod -p "$(openssl passwd -crypt "$ROOT_PASS")" root
 #echo "Digite a senha de root:"
 #sudo passwd
 

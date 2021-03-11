@@ -8,19 +8,19 @@ if [ -f "$scriptsDir/.env" ]; then
 	if [[ $(/usr/bin/id -u) -ne 0 ]]; then
 		printf "\033[1;31m----------------- Erro ---------------------\033[0m\n"
 		printf "\033[1;31mEstes scripts devem ser executados como root\033[0m\n"
-		exit -1
+		exit 1
 	fi
 
 	mkdir -p /usr/local/cmc
 
 	if [ -f "/usr/local/cmc/script-completo" ]; then
 		echo "Todos os scripts já foram rodados, delete a flag /usr/local/cmc/script-completo se deseja rodá-los novamente. Aviso, rodar alguns dos scripts mais de uma vez pode sobreescrever mudanças feitas após a execução."
-		exit -1
+		exit 1
 	fi
 
 	if ! cd "$scriptsDir/scripts"; then
 		echo "Pasta scripts não encontrada."
-		exit -2
+		exit 2
 	fi
 
 	# Atentar a ordem dos scripts a serem rodados
@@ -53,8 +53,8 @@ if [ -f "$scriptsDir/.env" ]; then
 		if ! bash -e "$file"; then
 			logger "Erro ao rodar o script $file, abortando"
 			printf "\033[1;31m----------------- Erro ---------------------\033[0m\n"
-			printf "\033[1;31mErro ao rodar o script $file, abortando\033[0m\n"
-			exit -2
+			printf "\033[1;31mErro ao rodar o script %s, abortando\033[0m\n" "$file"
+			exit 2
 		fi
 		echo "$file" >>/usr/local/cmc/script-andamento
 	done
@@ -66,5 +66,5 @@ if [ -f "$scriptsDir/.env" ]; then
 
 else
 	echo "Arquivo de configuração não encontrado"
-	exit -1
+	exit 1
 fi

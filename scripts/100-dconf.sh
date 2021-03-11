@@ -8,11 +8,11 @@ echo "user-db:user
 system-db:local" > /etc/dconf/profile/user
 
 # Senha login remoto
-echo -en "Digite a senha para acesso remoto\nSenha:"
-read -s VNCPASS
-echo ""
+#echo -en "Digite a senha para acesso remoto\nSenha:"
+#read -s VNCPASS
+#echo ""
 
-VNCPASS64=$(echo -e "$VNCPASS" | base64);
+VNCPASS64="$(echo -e "$VNCPASS" | base64)"
 
 # Configurações em si. Cuidado com os escapes de "
 echo -e "
