@@ -15,8 +15,5 @@ greeter-setup-script=/usr/bin/numlockx" > /usr/share/lightdm/lightdm.conf.d/90-s
 echo '[Greeter]
 background = /usr/share/backgrounds/cmc/login-bg.jpg
 show-hostname=true
-font-name=Ubuntu 18
+font-name=Mint 20
 activate-numlock=true' > /etc/lightdm/slick-greeter.conf 
-
-# Pega hostname do DHCP
-rm /etc/hostname

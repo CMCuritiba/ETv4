@@ -1,4 +1,4 @@
-### Repositório para os scripts da imagem Mint/Mate
+### Repositório para os scripts da imagem Mint/Cinnamon
 
 #### Diretrizes
 1. Devem ser criados _scripts_ para todas as operações possíveis.
@@ -6,7 +6,7 @@
 3. _Scripts_ devem ser [idempotentes](https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html#term-idempotency) (seguros para múltiplas execuções).
 
 #### Requisitos
-1. Os _scripts_ foram testados no **Mint 19.3**.
+1. Os _scripts_ foram testados no **Mint 20 Cinnamon**.
 
 #### Instalação/configuração
 Procedimento:

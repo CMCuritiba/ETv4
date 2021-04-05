@@ -1,2 +1,2 @@
 #!/bin/bash
-pkexec --user root "/usr/bin/mate-terminal" "$@"
+pkexec /usr/bin/gnome-terminal

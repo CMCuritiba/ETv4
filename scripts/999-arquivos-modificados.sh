@@ -18,16 +18,16 @@ ln -sf /usr/lib/firefox-esr/distribution/distribution.ini /usr/local/cmc/modific
 ln -sf /etc/opt/chrome/policies/ /usr/local/cmc/modificados/policies
 
 # Coisas no autostart
-ln -sf /etc/xdg/autostart/owncloud.desktop /usr/local/cmc/modificados/owncloud.desktop
 ln -sf /etc/xdg/autostart/forcelogout.desktop /usr/local/cmc/modificados/forcelogout.desktop
 
 # Bloqueio de execução de alguns programas
-ln -sf /usr/bin/mate-terminal /usr/local/cmc/modificados/mate-terminal
+ln -sf /usr/bin/gnome-terminal /usr/local/cmc/modificados/gnome-terminal
 ln -sf /usr/bin/mintupdate /usr/local/cmc/modificados/mintupdate
 ln -sf /usr/bin/mintreport /usr/local/cmc/modificados/mintreport
 #ln -sf /usr/bin/menulibre /usr/local/cmc/modificados/menulibre
-ln -sf /usr/bin/mate-desktop-item-edit /usr/local/cmc/modificados/mate-desktop-item-edit
+ln -sf /usr/bin/cinnamon-desktop-editor /usr/local/cmc/modificados/cinnamon-desktop-editor
 ln -sf /usr/bin/nm-connection-editor /usr/local/cmc/modificados/nm-connection-editor
+ln -sf /usr/bin/nm-applet /usr/local/cmc/modificados/nm-applet
 
 # dconf
 ln -sf /etc/dconf/profile/user /usr/local/cmc/modificados/user
@@ -62,3 +62,6 @@ ln -sf /etc/cron.hourly/nssupdate /usr/local/cmc/modificados/nssupdate
 
 # Configura retencao do syslog e auth
 ln -sf /etc/logrotate.d/rsyslog /usr/local/cmc/modificados/rsyslog
+
+# Scripts de rede
+ln -sf /mnt/suporte/etv4/scripts/boot.sh /usr/local/cmc/modificados/boot.sh

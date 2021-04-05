@@ -9,18 +9,6 @@ sed -i 's|//packages.linuxmint.com|//br.packages.linuxmint.com|' /etc/apt/source
 add-apt-repository -y ppa:starws-box/deadbeef-player
 add-apt-repository -y ppa:mozillateam/ppa
 
-# Adiciona repositório do ownCloud:
-VERSAO_MINT="$(lsb_release -r | awk '{print $2}' | cut -d '.' -f 1)"
-if [[ -z "$VERSAO_MINT" ]]; then
-    logger "Não foi possível determinar a versão do Mint."
-    exit 1
-fi
-echo "deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Linux_Mint_$VERSAO_MINT/ /" > "/etc/apt/sources.list.d/owncloud-client.list"
-if ! wget -nv "https://download.opensuse.org/repositories/isv:ownCloud:desktop/Linux_Mint_$VERSAO_MINT/Release.key" -O - | apt-key add -; then
-    logger "Release.key do ownCloud para Mint $VERSAO_MINT não encontrada."
-    exit 1
-fi
-
 # Update e Upgrade inicial:
 apt-get update
 apt-get -y upgrade
@@ -33,7 +21,7 @@ apt-get install -qyf deadbeef vlc audacity exfat-fuse exfat-utils shotwell gthum
 # Navegacao
 apt-get install -qyf firefox-esr firefox-esr-locale-pt
 # Utilitarios e produtividade
-apt-get install -qyf owncloud-client owncloud-client-caja vim gedit pdfsam unrar ttf-mscorefonts-installer gnote
+apt-get install -qyf vim gedit pdfsam unrar ttf-mscorefonts-installer
 # SO
 apt-get install -qyf ncdu numlockx acct
 
@@ -47,3 +35,4 @@ if ! dpkg-query -l google-chrome-stable &>/dev/null; then
 fi
 
 apt-get -qyf upgrade
+rm -rf google-chrome-stable_current_amd64.deb
